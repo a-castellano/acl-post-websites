@@ -7,6 +7,7 @@ CHOWN="/bin/chown -R"
 CHMOD="/bin/chmod -R"
 RESTARTAPACHE="/etc/init.d/apache2 restart"
 
+APACHE="/etc/apache2"
 SITES_ENABLED="/etc/apache2/sites-enabled"
 DEVELOPERS_FOLDER="/var/developers"
 
@@ -34,6 +35,9 @@ $CP apache2/developerguest1.website.io.conf $SITES_ENABLED
 $CP apache2/developerguest2.website.io.conf $SITES_ENABLED
 $CP apache2/developers.website.io.conf $SITES_ENABLED
 $CP apache2/john.website.io.conf $SITES_ENABLED
+
+$ECHO "Copying apache conf file"
+$CP apache2/apache2.conf $APACHE
 
 $ECHO "Restarting Apache2"
 $RESTARTAPACHE
